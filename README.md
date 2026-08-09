@@ -1,4 +1,4 @@
-## Topological Data Analysis (TDA) Pipeline for Multiple Myeloma Phenotyping
+🧬 ## Topological Data Analysis (TDA) Pipeline for Multiple Myeloma Phenotyping
 # Project Overview
 This repository contains a computational oncology pipeline that utilizes Topological Data Analysis (TDA) to identify and analyze distinct metabolic and oncogenic phenotypes within a Multiple Myeloma (MM) patient cohort.
 By integrating genomic data (SNVs) and real-world clinical outcomes, this project aims to uncover novel disease subtypes that traditional linear models or strict clustering algorithms might miss. A specific focus of this pipeline is investigating the "Low Burden" or "Dark Matter" cohort—patients exhibiting clinical symptoms of Multiple Myeloma (CRAB criteria) but lacking canonical metabolic or cytogenetic drivers (e.g., TP53, KRAS, BRAF).
@@ -25,11 +25,20 @@ TDA & Clustering: Computes the Euclidean distance matrix and applies PCA-filtere
 Survival Analysis: Merges derived subtypes with clinical survival data to visualize prognostic implications.
 "Dark Matter" Investigation: Isolates the Low_Burden cohort, cross-references with FISH translocation and Hyperdiploidy status, and plots a curated Oncoplot revealing true underlying drivers.
 # Outputs & Results
-Interactive or static topological networks of patient clusters.
-Kaplan-Meier survival curves demonstrating the clinical validity of the TDA-derived phenotypes.
-Cleaned Oncoplots for specific patient sub-cohorts.
-TDA_Clusters.csv: A final exported dataset mapping each patient to their TDA cluster, cytogenetic markers, and survival status.
-#References & Acknowledgements
+# Final Exported Dataset: TDA_Clusters.csv 
+# Click here to view the final results dataset https://github.com/Chromanon/Multiple_Myeloma/blob/main/TDA_Clusters.csv
+This file is the primary output of the pipeline, containing the final mathematical-to-clinical mapping for all analyzed patients. It bridges the gap between the unsupervised TDA algorithm and real-world clinical data.
+Data Dictionary:
+Patient_ID: Unique identifier for the Multiple Myeloma patient (matches standard TCGA/cBioPortal barcodes).
+TDA_Cluster: The mathematically derived phenotype via TDA (e.g., Low_Burden, TP53, RTK-RAS).
+FISH: Presence of specific FISH translocations (e.g., t(11;14)).
+Hyperdiploid: Hyperdiploidy status (Yes/No).
+Status: Clinical outcome (Alive / Dead) derived from PATIENT_DEATH_REASON.
+# Visualizations Generated
+Topological Networks: Interactive or static network graphs of patient clusters.
+Kaplan-Meier Survival Curves: Demonstrating the clinical validity and prognostic value of the TDA-derived phenotypes.
+Cleaned Oncoplots: Mutational landscapes for specific sub-cohorts (like the Low_Burden group), filtered for false positives and passenger genes.
+# References & Acknowledgements
 Genomic Dataset: Lohr, J. G., et al. (2014). Widespread genetic heterogeneity in multiple myeloma: implications for targeted therapy. Cancer Cell, 25(1), 91-101. doi:10.1016/j.ccr.2013.12.015
 Oncogenic Pathways: Sanchez-Vega F, et al. (2018). Oncogenic Signaling Pathways in The Cancer Genome Atlas. Cell, 173(2):321-337.e10.
 Bioinformatics Tools: Mayakonda A, et al. (2018). Maftools: efficient and comprehensive analysis of somatic variants in cancer. Genome Res, 28(11):1747-1756.
